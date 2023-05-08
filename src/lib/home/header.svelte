@@ -1,15 +1,26 @@
 <script>
+	import { goto } from '$app/navigation';
 	import { triggerSearchModal } from '../../helpers/trigger-search-modal';
 </script>
 
 <div class="flex justify-between">
-	<a class="flex items-center gap-4 " href="/">
+	<span class="flex items-center gap-4">
 		<span>
 			<i class="fa-solid fa-utensils text-4xl" />
 			<i class="fa-solid fa-martini-glass-citrus text-4xl" />
 		</span>
-		<h1>Resippy</h1>
-	</a>
+
+		<!-- TODO: Make this an <a> tag then fix default link styling -->
+		<h1
+			tabindex="0"
+			class="hover:cursor-pointer"
+			role="link"
+			on:keydown={(e) => (e.key === 'Enter' ? goto('/') : null)}
+			on:click={() => goto('/')}
+		>
+			Resippy
+		</h1>
+	</span>
 
 	<button
 		on:click={triggerSearchModal}

@@ -16,11 +16,9 @@
 	const cFooter =
 		'hidden md:flex items-center gap-2 bg-surface-300-600-token p-4 text-xs font-bold';
 
-	// Local
 	let searchTerm = '';
 	let filteredRecipes = recipes;
 
-	// Elements
 	let elemDocSearch: HTMLElement;
 
 	function onSearch(): void {

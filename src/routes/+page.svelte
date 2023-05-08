@@ -1,7 +1,5 @@
 <script lang="ts">
 	import RecipeCard from '$lib/home/recipe-card.svelte';
-	// import { recipes } from '../constants/recipes';
-	import Header from '$lib/home/header.svelte';
 	import type { Recipe } from '$lib/types';
 
 	export let data: { recipes: Recipe[] };
