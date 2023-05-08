@@ -1,4 +1,5 @@
 <script lang="ts">
+	import RecipeIcon from '$lib/helpers/recipe-icon.svelte';
 	import type { Recipe } from '$lib/types';
 	import { modalStore } from '@skeletonlabs/skeleton';
 
@@ -59,14 +60,7 @@
 						<!-- prettier-ignore -->
 						<a class={cResultAnchor} href="/recipes/{recipe.slug}" on:click={() => { modalStore.close(); }}>
 								<div class="flex items-center gap-4">
-									{#if recipe.category.toLowerCase() === 'cocktail'}
-										<i class="fa-solid fa-martini-glass-citrus" />
-									{:else if recipe.category.toLowerCase() === 'food'}
-										<i class="fa-solid fa-utensils" />
-									{:else}
-										<i class="fa-solid fa-kitchen-set" />
-									{/if}
-
+									<RecipeIcon category={recipe.category} />
 									<span class="flex-auto font-bold opacity-75">{recipe.title}</span>
 								</div>
 							</a>

@@ -7,7 +7,7 @@
 
 <section>
 	<ul class="grid grid-cols-1 gap-4">
-		<li class="w-full grid grid-cols-1 md:grid-cols-3 gap-4">
+		<li class="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
 			{#each recipes as recipe}
 				<RecipeCard {...recipe} />
 			{/each}
