@@ -2,7 +2,7 @@ import type { Recipe } from '$lib/types';
 import { json } from '@sveltejs/kit';
 
 async function getRecipes() {
-	let recipes = [];
+	let recipes: Recipe[] = [];
 	const paths = import.meta.glob('/src/recipes/*.md', { eager: true });
 
 	for (const path in paths) {

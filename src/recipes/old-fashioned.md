@@ -5,6 +5,6 @@ img: 'https://source.unsplash.com/random/1280x540?skeleton'
 category: 'Cocktail'
 ---
 
-## Markdown
+## Old Fashioned
 
 lorem ipsum

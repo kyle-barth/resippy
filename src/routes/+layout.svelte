@@ -7,10 +7,9 @@
 	import Header from '$lib/home/header.svelte';
 	import SearchModal from '$lib/modals/search-modal.svelte';
 	import PageLayout from '$lib/page-layout.svelte';
-	import type { Recipe } from '$lib/types';
 	import { triggerSearchModal } from '../helpers/trigger-search-modal';
 
-	export let data: { recipes: Recipe[] };
+	export let data;
 	let recipes = data.recipes;
 
 	const modalComponentRegistry: Record<string, ModalComponent> = {
