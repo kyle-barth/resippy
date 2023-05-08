@@ -1,0 +1,19 @@
+<script lang="ts">
+	import RecipeCard from '$lib/home/recipe-card.svelte';
+	// import { recipes } from '../constants/recipes';
+	import Header from '$lib/home/header.svelte';
+	import type { Recipe } from '$lib/types';
+
+	export let data: { recipes: Recipe[] };
+	let recipes = data.recipes;
+</script>
+
+<section>
+	<ul class="grid grid-cols-1 gap-4">
+		<li class="w-full grid grid-cols-1 md:grid-cols-3 gap-4">
+			{#each recipes as recipe}
+				<RecipeCard {...recipe} />
+			{/each}
+		</li>
+	</ul>
+</section>
