@@ -15,12 +15,17 @@ category: 'Cocktail'
 		src: '/assets/old-fashioned.jpeg',
 		alt: 'Old Fashioned Cocktail'
 	};
-	const ingredients = ['50ml Bourbon', '2-4 bar spoons Maple Syrup', 'Orange Peel']
+	const steps = [
+		{
+			title: 'Stir Together', 
+			ingredients: ['50ml Bourbon', '2-4 bar spoons Maple Syrup', 'Orange Peel']
+		}
+	]
 </script>
 
 <Recipe
 title={title}
 description={description}
-ingredients={ingredients}
+steps={steps}
 img={img}
 />

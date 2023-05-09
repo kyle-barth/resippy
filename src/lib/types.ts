@@ -5,3 +5,8 @@ export type Recipe = {
 	category: string;
 	slug: string;
 };
+
+export type Step = {
+	title: string;
+	ingredients: string[];
+};

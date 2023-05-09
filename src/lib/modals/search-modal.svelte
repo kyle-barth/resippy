@@ -24,7 +24,9 @@
 
 	function onSearch(): void {
 		filteredRecipes = recipes.filter(
-			(r) => r.title.includes(searchTerm) || r.description.includes(searchTerm)
+			(r) =>
+				r.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+				r.description.toLowerCase().includes(searchTerm.toLowerCase())
 		);
 	}
 

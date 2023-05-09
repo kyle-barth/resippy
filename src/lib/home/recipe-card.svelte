@@ -23,5 +23,4 @@
 			</p>
 		</article>
 	</div>
-	<hr class="opacity-50" />
 </a>

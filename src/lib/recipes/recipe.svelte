@@ -1,8 +1,10 @@
 <script lang="ts">
+	import type { Step } from '$lib/types';
+
 	export let title: string;
 	export let description: string;
 	export let img: { src: string; alt: string };
-	export let ingredients: string[];
+	export let steps: Step[];
 </script>
 
 <svelte:head>
@@ -23,24 +25,43 @@
 		</h1>
 	</header>
 
-	<article class="p-10">
+	<div class="p-10">
 		<div class="flex flex-col gap-8">
 			<span class="flex gap-4 items-center justify-center">
-				<i class="fa-solid fa-list-check text-3xl" />
-				<h2>Ingredients</h2>
+				<i class="fa-solid fa-list-ol text-3xl" />
+				<h2>Steps</h2>
 			</span>
-			<ul class="flex flex-col gap-4">
-				{#each ingredients as ingredient}
+
+			<ol class="flex flex-col gap-4">
+				{#each steps as step, i}
 					<li>
-						<label class="flex items-center gap-5">
-							<input class="sm:w-6 sm:h-6 w-7 h-7" type="checkbox" />
-							<p>{ingredient}</p>
-						</label>
+						<article class="flex flex-col gap-4">
+							<header>
+								<h3>{`${i + 1}. ${step.title}`}</h3>
+							</header>
+							<ul class="flex flex-col gap-4">
+								{#each step.ingredients as ingredient}
+									<li>
+										<label class="flex items-center gap-5">
+											<input class="sm:w-6 sm:h-6 w-7 h-7" type="checkbox" />
+											<p>{ingredient}</p>
+										</label>
+									</li>
+								{/each}
+							</ul>
+						</article>
 					</li>
 				{/each}
-			</ul>
+			</ol>
+
+			<hr />
+
+			<span class="w-full flex justify-between">
+				<p>Enjoy 😋</p>
+				<a href="/">More recipes <i class="fa-solid fa-arrow-right" /></a>
+			</span>
 		</div>
-	</article>
+	</div>
 </section>
 
 <section class="flex sm:flex-row flex-col gap-5">
