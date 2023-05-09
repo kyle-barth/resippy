@@ -1,7 +1,19 @@
 <script lang="ts">
 	import { AppShell, Modal, modalStore, type ModalComponent } from '@skeletonlabs/skeleton';
+
 	import '@skeletonlabs/skeleton/styles/all.css';
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
+
+	// TODO change theme
+	// import '@skeletonlabs/skeleton/themes/theme-gold-nouveau.css';
+	// import '@skeletonlabs/skeleton/themes/theme-hamlindigo.css';
+
+	// Your custom Skeleton theme:
+	// import '../themes/deep-ocean.postcss';
+	// import '../themes/charcoal.postcss';
+	// import '../themes/purple.postcss';
+	// import '../themes/notepad.postcss';
+
 	import '../app.postcss';
 
 	import Header from '$lib/home/header.svelte';

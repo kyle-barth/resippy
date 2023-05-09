@@ -12,7 +12,12 @@ category: 'Cocktail'
 	const steps = [
 		{
 			title: 'Stir Together', 
-			ingredients: ['50ml Bourbon', '2-4 bar spoons Maple Syrup', 'Orange Peel']
+			ingredients: ['50ml Bourbon', '15ml Maple Syrup', '1 Dash Bitters']
+		},
+		{
+			title: 'Garnish', 
+			instructions: 'Express citrus oil over drink',
+			ingredients: ['2inch Orange Peel']
 		}
 	]
 </script>

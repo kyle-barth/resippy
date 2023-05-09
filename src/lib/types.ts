@@ -8,5 +8,6 @@ export type Recipe = {
 
 export type Step = {
 	title: string;
-	ingredients: string[];
+	instructions?: string;
+	ingredients?: string[];
 };

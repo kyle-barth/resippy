@@ -1,10 +1,21 @@
 <script lang="ts">
 	import type { Step } from '$lib/types';
+	import { combineIngredients } from '../../helpers/combine-ingredients';
 
 	export let title: string;
 	export let description: string;
 	export let src: string;
 	export let steps: Step[];
+
+	let showIngredients = false;
+	const ingredients = combineIngredients(
+		steps
+			.filter((s) => 'ingredients' in s)
+			.flatMap((s) => s.ingredients)
+			.filter((i) => i !== undefined) as string[]
+	);
+
+	const toggle = () => (showIngredients = !showIngredients);
 </script>
 
 <svelte:head>
@@ -27,34 +38,63 @@
 
 	<div class="p-10">
 		<div class="flex flex-col gap-8">
-			<span class="flex gap-4 items-center justify-center">
-				<i class="fa-solid fa-list-ol text-3xl" />
-				<h2>Steps</h2>
-			</span>
+			<div class="flex flex-col-reverse sm:flex-row gap-8 justify-between w-full">
+				<span class="flex gap-4 items-center justify-center">
+					{#if showIngredients}
+						<i class="fa-solid fa-list-check text-3xl" />
+					{:else}
+						<i class="fa-solid fa-list-ol text-3xl" />
+					{/if}
+					<h2>{showIngredients ? 'Ingredients' : 'Steps'}</h2>
+				</span>
+				<button class="btn variant-filled-tertiary" on:click={toggle}
+					>Show {showIngredients ? 'Steps' : 'Ingredients'}</button
+				>
+			</div>
 
-			<ol class="flex flex-col gap-4">
-				{#each steps as step, i}
-					<li>
-						<article class="flex flex-col gap-4">
-							<header>
-								<h3>{`${i + 1}. ${step.title}`}</h3>
-							</header>
-							<ul class="flex flex-col gap-4">
-								{#each step.ingredients as ingredient}
-									<li>
-										<label class="flex items-center gap-5">
-											<input class="sm:w-6 sm:h-6 w-7 h-7" type="checkbox" />
-											<p>{ingredient}</p>
-										</label>
-									</li>
-								{/each}
-							</ul>
-						</article>
-					</li>
-				{/each}
-			</ol>
+			{#if showIngredients}
+				<ul class="flex flex-col gap-4">
+					{#each ingredients as ingredient}
+						<li>
+							<label class="flex items-center gap-5">
+								<input class="sm:w-6 sm:h-6 w-7 h-7" type="checkbox" />
+								<p>{ingredient}</p>
+							</label>
+						</li>
+					{/each}
+				</ul>
 
-			<hr />
+				<hr />
+			{:else}
+				<ol class="flex flex-col gap-4">
+					{#each steps as step, i}
+						<li>
+							<article class="flex flex-col gap-4">
+								<header class="m-auto">
+									<h3>{`${i + 1}. ${step.title}`}</h3>
+								</header>
+
+								{#if step.instructions}
+									<p>{step.instructions}</p>
+								{/if}
+
+								<ul class="flex flex-col gap-4">
+									{#each step.ingredients as ingredient}
+										<li>
+											<label class="flex items-center gap-5">
+												<input class="sm:w-6 sm:h-6 w-7 h-7" type="checkbox" />
+												<p>{ingredient}</p>
+											</label>
+										</li>
+									{/each}
+								</ul>
+
+								<hr />
+							</article>
+						</li>
+					{/each}
+				</ol>
+			{/if}
 
 			<span class="w-full flex justify-between">
 				<p>Enjoy 😋</p>
