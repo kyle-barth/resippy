@@ -3,7 +3,7 @@
 
 	export let title: string;
 	export let description: string;
-	export let img: { src: string; alt: string };
+	export let src: string;
 	export let steps: Step[];
 </script>
 
@@ -15,8 +15,8 @@
 	<header class="relative flex items-center justify-center">
 		<img
 			class="bg-black/50 w-full sm:aspect-[10/3] aspect-[6/3] object-cover h-full opacity-50"
-			src={img.src}
-			alt={img.alt}
+			{src}
+			alt={title}
 		/>
 		<h1
 			class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 drop-shadow-lg"
