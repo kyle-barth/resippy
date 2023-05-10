@@ -1,9 +1,12 @@
 <script lang="ts">
 	import RecipeIcon from '$lib/helpers/recipe-icon.svelte';
 	import type { Recipe } from '$lib/types';
-	import { modalStore } from '@skeletonlabs/skeleton';
+	import { focusTrap, modalStore } from '@skeletonlabs/skeleton';
+	import { groupRecipesByCategory } from '../../helpers/group-recipes-by-category';
 
 	export let recipes: Recipe[];
+
+	const groupedRecipesByCategory = groupRecipesByCategory(recipes);
 
 	// Classes
 	const cBase =
@@ -38,8 +41,8 @@
 	}
 </script>
 
-<div bind:this={elemDocSearch} class="modal-search {cBase}">
-	<!-- Header -->
+<!-- There is a bug where it can still tab outside of this ¯\_(ツ)_/¯ -->
+<div use:focusTrap={true} bind:this={elemDocSearch} class="modal-search {cBase}">
 	<header class="modal-search-header {cHeader}">
 		<i class="fa-solid fa-magnifying-glass text-xl ml-4" />
 		<input
@@ -51,27 +54,40 @@
 			on:keydown={onInputKeyDown}
 		/>
 	</header>
-	<!-- Results -->
+
 	<div class="modal-search-results {cResults}">
-		<nav class="list-nav">
-			<div class="text-sm font-bold p-4">Recipes:</div>
-			<ul>
-				<!-- Item -->
-				{#each filteredRecipes as recipe}
-					<li class="text-lg">
-						<!-- prettier-ignore -->
-						<a class={cResultAnchor} href="/recipes/{recipe.slug}" on:click={() => { modalStore.close(); }}>
-								<div class="flex items-center gap-4">
-									<RecipeIcon category={recipe.category} />
-									<span class="flex-auto font-bold opacity-75">{recipe.title}</span>
-								</div>
-							</a>
-					</li>
-				{/each}
-			</ul>
+		<nav class="list-nav text-lg">
+			{#each groupedRecipesByCategory as recipe}
+				{#if filteredRecipes
+					.map((r) => r.category)
+					.includes(recipe.category) && recipe.recipes.length > 0}
+					<p class="text-sm font-bold p-4">{recipe.category}:</p>
+				{/if}
+
+				<ul>
+					{#each filteredRecipes as filteredRecipe}
+						{#if filteredRecipe.category === recipe.category}
+							<li>
+								<a
+									class={cResultAnchor}
+									href="/recipes/{filteredRecipe.slug}"
+									on:click={() => {
+										modalStore.close();
+									}}
+								>
+									<div class="flex items-center gap-4">
+										<RecipeIcon category={filteredRecipe.category} />
+										<span class="font-bold opacity-75">{filteredRecipe.title}</span>
+									</div>
+								</a>
+							</li>
+						{/if}
+					{/each}
+				</ul>
+			{/each}
 		</nav>
 	</div>
-	<!-- Footer -->
+
 	<footer class="modal-search-footer {cFooter}">
 		<div><kbd class="kbd">Esc</kbd> to close</div>
 		<div><kbd class="kbd">Tab</kbd> to navigate</div>
