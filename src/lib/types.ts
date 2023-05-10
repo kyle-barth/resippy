@@ -1,6 +1,6 @@
 export interface Recipe {
 	title: string;
-	description: string;
+	description?: string;
 	img: string;
 	category: string;
 	slug: string;

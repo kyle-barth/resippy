@@ -1,6 +1,6 @@
 ---
-title: Neapolitan Pizza Dough - 72% Hyd
-summary: Leopard spotted bread typically topped with fresh tomato sauce, mozzarella cheese, and fresh basil.
+title: Neapolitan Pizza Dough
+summary: Leopard spotted goodness.
 description: Neapolitan-style pizza is a classic Italian pizza that has become popular worldwide. It is characterized by its thin and crispy crust, which is made with high-protein flour, water, yeast, and salt. The dough is then stretched by hand and topped with fresh tomato sauce, mozzarella cheese, and fresh basil. The pizza is cooked in a wood-fired oven, which gives it a distinct smoky flavor and a soft, chewy texture. Neapolitan-style pizza is a perfect balance of flavors and textures, and it is a delicious and satisfying meal that is enjoyed by pizza lovers around the world.
 src: '/assets/neapolitan-pizza.jpeg'
 category: 'Food'

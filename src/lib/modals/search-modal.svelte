@@ -26,11 +26,14 @@
 	let elemDocSearch: HTMLElement;
 
 	function onSearch(): void {
-		filteredRecipes = recipes.filter(
-			(r) =>
-				r.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-				r.description.toLowerCase().includes(searchTerm.toLowerCase())
-		);
+		filteredRecipes = recipes
+			.filter((r) => r.title.toLowerCase().includes(searchTerm.toLowerCase()))
+			.filter((r) => {
+				if ('description' in r && r.description) {
+					return r.description.toLowerCase().includes(searchTerm.toLowerCase());
+				}
+				return r;
+			});
 	}
 
 	function onInputKeyDown(event: KeyboardEvent): void {

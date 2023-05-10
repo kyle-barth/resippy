@@ -78,16 +78,18 @@
 									<p>{step.instructions}</p>
 								{/if}
 
-								<ul class="flex flex-col gap-4">
-									{#each step.ingredients as ingredient}
-										<li>
-											<label class="flex items-center gap-5">
-												<input class="sm:w-6 sm:h-6 w-7 h-7" type="checkbox" />
-												<p>{ingredient}</p>
-											</label>
-										</li>
-									{/each}
-								</ul>
+								{#if step.ingredients}
+									<ul class="flex flex-col gap-4">
+										{#each step.ingredients as ingredient}
+											<li>
+												<label class="flex items-center gap-5">
+													<input class="sm:w-6 sm:h-6 w-7 h-7" type="checkbox" />
+													<p>{ingredient}</p>
+												</label>
+											</li>
+										{/each}
+									</ul>
+								{/if}
 
 								<hr />
 							</article>
@@ -104,14 +106,16 @@
 	</div>
 </section>
 
-<section class="flex sm:flex-row flex-col gap-5">
-	<header class="flex flex-col items-center gap-1 m-auto">
-		<i class="fa-solid fa-book" />
-		<h3>History</h3>
-	</header>
-	<span class="sm:w-2/3 gap-10 flex flex-col">
-		<p>
-			{description}
-		</p>
-	</span>
-</section>
+{#if description}
+	<section class="flex sm:flex-row flex-col gap-5">
+		<header class="flex flex-col items-center gap-1 m-auto">
+			<i class="fa-solid fa-book" />
+			<h3>History</h3>
+		</header>
+		<span class="sm:w-2/3 gap-10 flex flex-col">
+			<p>
+				{description}
+			</p>
+		</span>
+	</section>
+{/if}
