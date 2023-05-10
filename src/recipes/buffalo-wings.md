@@ -12,7 +12,8 @@ category: 'Food'
 	const steps = [
 		{
 			title: 'Wings prep & frying',
-            instructions: 'Prep wings, season them with salt and pepper, then Air Fry prepped wings for 15-20 mins on 205°C.'
+            instructions: 'Prep wings, season them with salt and pepper, then Air Fry prepped wings for 15-20 mins on 205°C.',
+			ingredients: ['500g Chicken Wings]
 		},
 		{
 			title: 'Buffalo Sauce',
