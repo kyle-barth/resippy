@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Checkbox from '$lib/helpers/checkbox.svelte';
 	import type { Step } from '$lib/types';
 	import { combineIngredients } from '../../helpers/combine-ingredients';
 
@@ -6,6 +7,8 @@
 	export let description: string;
 	export let src: string;
 	export let steps: Step[];
+
+	const spacing = 'sm:gap-4 gap-6';
 
 	let showIngredients = false;
 	const ingredients = combineIngredients(
@@ -53,13 +56,10 @@
 			</div>
 
 			{#if showIngredients}
-				<ul class="flex flex-col gap-4">
+				<ul class="flex flex-col {spacing}">
 					{#each ingredients as ingredient}
 						<li>
-							<label class="flex items-center gap-5">
-								<input class="sm:w-6 sm:h-6 w-7 h-7" type="checkbox" />
-								<p>{ingredient}</p>
-							</label>
+							<Checkbox text={ingredient} />
 						</li>
 					{/each}
 				</ul>
@@ -69,7 +69,7 @@
 				<ol class="flex flex-col gap-4">
 					{#each steps as step, i}
 						<li>
-							<article class="flex flex-col gap-4">
+							<article class="flex flex-col {spacing}">
 								<header class="m-auto">
 									<h3>{`${i + 1}. ${step.title}`}</h3>
 								</header>
@@ -79,13 +79,10 @@
 								{/if}
 
 								{#if step.ingredients}
-									<ul class="flex flex-col gap-4">
+									<ul class="flex flex-col {spacing}">
 										{#each step.ingredients as ingredient}
 											<li>
-												<label class="flex items-center gap-5">
-													<input class="sm:w-6 sm:h-6 w-7 h-7" type="checkbox" />
-													<p>{ingredient}</p>
-												</label>
+												<Checkbox text={ingredient} />
 											</li>
 										{/each}
 									</ul>

@@ -20,6 +20,7 @@
 	import SearchModal from '$lib/modals/search-modal.svelte';
 	import PageLayout from '$lib/page-layout.svelte';
 	import { triggerSearchModal } from '../helpers/trigger-search-modal';
+	import DisableAutoScroll from '$lib/helpers/disable-auto-scroll.svelte';
 
 	export let data;
 	let recipes = data.recipes;
@@ -41,6 +42,7 @@
 <Modal components={modalComponentRegistry} />
 
 <AppShell regionPage="overflow-y-scroll" slotFooter="bg-black p-4">
+	<DisableAutoScroll />
 	<PageLayout>
 		<div class="container h-full mx-auto justify-center items-center grid grid-cols-1 gap-10">
 			<Header />
