@@ -80,7 +80,9 @@
 								>
 									<div class="flex items-center gap-4">
 										<RecipeIcon category={filteredRecipe.category} />
-										<span class="font-bold opacity-75">{filteredRecipe.title}</span>
+										<span class="font-semibold opacity-75 whitespace-pre-wrap"
+											>{filteredRecipe.title}</span
+										>
 									</div>
 								</a>
 							</li>
