@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Checkbox from '$lib/helpers/checkbox.svelte';
+	import Header from '$lib/recipes/header.svelte';
 	import type { Step } from '$lib/types';
 	import { combineIngredients } from '../../helpers/combine-ingredients';
 
@@ -28,15 +29,12 @@
 <section class="card overflow-hidden">
 	<header class="relative flex items-center justify-center">
 		<img
-			class="bg-black/50 w-full sm:aspect-[10/3] aspect-[6/3] object-cover h-full opacity-50"
+			class="opacity-80 w-full sm:aspect-[10/3] aspect-[6/3] object-cover h-full"
 			{src}
 			alt={title}
 		/>
-		<h1
-			class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 drop-shadow-lg"
-		>
-			{title}
-		</h1>
+
+		<Header {title} />
 	</header>
 
 	<div class="p-10">
