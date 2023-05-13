@@ -9,7 +9,6 @@
 
 	const groupedRecipesByCategory = groupRecipesByCategory(recipes);
 
-	// Classes
 	const cBase =
 		'card bg-surface-100/60 dark:bg-surface-500/30 backdrop-blur-lg overflow-hidden w-full max-w-[800px] shadow-xl mt-8 mb-auto';
 	const cHeader = 'bg-surface-300-600-token flex items-center';
@@ -27,22 +26,10 @@
 	let elemDocSearch: HTMLElement;
 
 	function onSearch(): void {
-		filteredRecipes = recipes.filter((r) => {
-			console.log(_.values(r).toString());
-
-			return _.values(r).toString().includes(searchTerm.toLowerCase());
-		});
+		filteredRecipes = recipes.filter((r) =>
+			_.values(r).toString().includes(searchTerm.toLowerCase())
+		);
 	}
-	// function onSearch(): void {
-	// 	filteredRecipes = recipes
-	// 		.filter((r) => r.title.toLowerCase().includes(searchTerm.toLowerCase()))
-	// 		.filter((r) => {
-	// 			if ('description' in r && r.description) {
-	// 				return r.description.toLowerCase().includes(searchTerm.toLowerCase());
-	// 			}
-	// 			return r;
-	// 		});
-	// }
 
 	function onInputKeyDown(event: KeyboardEvent): void {
 		if (['Enter', 'ArrowDown'].includes(event.code)) {
