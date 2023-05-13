@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { AppShell, Modal, modalStore, type ModalComponent } from '@skeletonlabs/skeleton';
 
+	import Header from '$lib/components/header/header.svelte';
+	import SearchModal from '$lib/components/modals/search-modal.svelte';
+
 	import '@skeletonlabs/skeleton/styles/all.css';
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
 
@@ -16,11 +19,9 @@
 
 	import '../app.postcss';
 
-	import Header from '$lib/home/header.svelte';
-	import SearchModal from '$lib/modals/search-modal.svelte';
-	import PageLayout from '$lib/page-layout.svelte';
-	import { triggerSearchModal } from '../helpers/trigger-search-modal';
-	import DisableAutoScroll from '$lib/helpers/disable-auto-scroll.svelte';
+	import DisableAutoScroll from '$lib/components/disable-auto-scroll/disable-auto-scroll.svelte';
+	import PageLayout from '$lib/components/page-layout/page-layout.svelte';
+	import { triggerSearchModal } from '$lib/helpers/trigger-search-modal';
 
 	export let data;
 	let recipes = data.recipes;

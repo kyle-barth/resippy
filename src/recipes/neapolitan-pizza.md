@@ -7,7 +7,7 @@ category: 'Food'
 ---
 
 <script>
-	import Recipe from '$lib/recipes/recipe.svelte';
+	import Recipe from '$lib/components/recipe/recipe.svelte';
 
 	const steps = [
 		{

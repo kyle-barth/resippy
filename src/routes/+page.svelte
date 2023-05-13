@@ -1,5 +1,5 @@
 <script lang="ts">
-	import RecipeCard from '$lib/home/recipe-card.svelte';
+	import RecipeCard from '$lib/components/recipe-card/recipe-card.svelte';
 	import _ from 'lodash';
 
 	export let data;

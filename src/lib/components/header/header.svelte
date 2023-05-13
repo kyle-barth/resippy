@@ -1,6 +1,6 @@
 <script>
 	import { isOsMac } from '$lib/helpers/is-on-mac';
-	import { triggerSearchModal } from '../../helpers/trigger-search-modal';
+	import { triggerSearchModal } from '$lib/helpers/trigger-search-modal';
 </script>
 
 <div class="flex justify-between gap-10 items-center">

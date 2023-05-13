@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CategoryIcon from '$lib/helpers/category-icon.svelte';
+	import CategoryIcon from '$lib/components/category-icon/category-icon.svelte';
 
 	export let title: string;
 	export let summary: string;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CategoryIcon from '$lib/helpers/category-icon.svelte';
+	import CategoryIcon from '$lib/components/category-icon/category-icon.svelte';
 	import type { Recipe } from '$lib/types';
 	import { focusTrap, modalStore } from '@skeletonlabs/skeleton';
 	import _ from 'lodash';

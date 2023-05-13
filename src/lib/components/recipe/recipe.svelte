@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Checkbox from '$lib/helpers/checkbox.svelte';
-	import Header from '$lib/recipes/header.svelte';
+	import Checkbox from '$lib/components/checkbox/checkbox.svelte';
 	import type { Step } from '$lib/types';
 	import { combineIngredients } from '../../helpers/combine-ingredients';
+	import Header from './header.svelte';
 
 	export let title: string;
 	export let description: string | undefined = undefined;
