@@ -1,10 +1,15 @@
 export interface Recipe {
 	title: string;
+	summary: string;
 	description?: string;
-	img: string;
+	src: string;
 	category: string;
 	slug: string;
 }
+
+export type RecipeData = Recipe & {
+	slug: string;
+};
 
 export interface GroupedRecipes {
 	category: string;

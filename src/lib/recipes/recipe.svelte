@@ -5,7 +5,7 @@
 	import { combineIngredients } from '../../helpers/combine-ingredients';
 
 	export let title: string;
-	export let description: string;
+	export let description: string | undefined = undefined;
 	export let src: string;
 	export let steps: Step[];
 

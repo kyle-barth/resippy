@@ -1,8 +1,9 @@
 <script lang="ts">
 	import RecipeCard from '$lib/home/recipe-card.svelte';
+	import _ from 'lodash';
 
 	export let data;
-	let recipes = data.recipes;
+	const recipes = data.recipes.map((recipe) => _.omit(recipe, 'description'));
 </script>
 
 <section>

@@ -4,9 +4,7 @@
 	const hPosition = 'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2';
 </script>
 
-<h1 class="{hPosition} opacity-100 filter blur-md text-center text-black">
-	{title}
-</h1>
-<h1 class="{hPosition} text-center drop-shadow-lg">
+<span class="{hPosition} w-1/2 h-1/2 filter blur-xl bg-black opacity-30 rounded-full" />
+<h1 class="{hPosition} text-center">
 	{title}
 </h1>

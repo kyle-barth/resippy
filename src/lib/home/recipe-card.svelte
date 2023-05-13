@@ -1,5 +1,5 @@
 <script lang="ts">
-	import RecipeIcon from '$lib/helpers/recipe-icon.svelte';
+	import CategoryIcon from '$lib/helpers/category-icon.svelte';
 
 	export let title: string;
 	export let summary: string;
@@ -14,7 +14,7 @@
 	</header>
 	<div class="p-4 space-y-4">
 		<span>
-			<RecipeIcon {category} />
+			<CategoryIcon {category} />
 			<h3>{title}</h3>
 		</span>
 		<article>

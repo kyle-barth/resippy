@@ -1,6 +1,5 @@
-import { type ModalSettings, modalStore } from '@skeletonlabs/skeleton';
+import { modalStore, type ModalSettings } from '@skeletonlabs/skeleton';
 
-// Search
 export function triggerSearchModal(): void {
 	const modal: ModalSettings = {
 		type: 'component',

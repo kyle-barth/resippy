@@ -1,7 +1,8 @@
 <script lang="ts">
-	import RecipeIcon from '$lib/helpers/recipe-icon.svelte';
+	import CategoryIcon from '$lib/helpers/category-icon.svelte';
 	import type { Recipe } from '$lib/types';
 	import { focusTrap, modalStore } from '@skeletonlabs/skeleton';
+	import _ from 'lodash';
 	import { groupRecipesByCategory } from '../../helpers/group-recipes-by-category';
 
 	export let recipes: Recipe[];
@@ -26,15 +27,22 @@
 	let elemDocSearch: HTMLElement;
 
 	function onSearch(): void {
-		filteredRecipes = recipes
-			.filter((r) => r.title.toLowerCase().includes(searchTerm.toLowerCase()))
-			.filter((r) => {
-				if ('description' in r && r.description) {
-					return r.description.toLowerCase().includes(searchTerm.toLowerCase());
-				}
-				return r;
-			});
+		filteredRecipes = recipes.filter((r) => {
+			console.log(_.values(r).toString());
+
+			return _.values(r).toString().includes(searchTerm.toLowerCase());
+		});
 	}
+	// function onSearch(): void {
+	// 	filteredRecipes = recipes
+	// 		.filter((r) => r.title.toLowerCase().includes(searchTerm.toLowerCase()))
+	// 		.filter((r) => {
+	// 			if ('description' in r && r.description) {
+	// 				return r.description.toLowerCase().includes(searchTerm.toLowerCase());
+	// 			}
+	// 			return r;
+	// 		});
+	// }
 
 	function onInputKeyDown(event: KeyboardEvent): void {
 		if (['Enter', 'ArrowDown'].includes(event.code)) {
@@ -79,7 +87,7 @@
 									}}
 								>
 									<div class="flex items-center gap-4">
-										<RecipeIcon category={filteredRecipe.category} />
+										<CategoryIcon category={filteredRecipe.category} />
 										<span class="font-semibold opacity-75 whitespace-pre-wrap"
 											>{filteredRecipe.title}</span
 										>

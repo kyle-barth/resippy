@@ -1,4 +1,5 @@
 <script>
+	import { isOsMac } from '$lib/helpers/is-on-mac';
 	import { triggerSearchModal } from '../../helpers/trigger-search-modal';
 </script>
 
@@ -16,12 +17,11 @@
 		on:click={triggerSearchModal}
 		class="flex justify-between items-center w-52 h-12 btn variant-filled-tertiary"
 	>
-		<!-- class="flex justify-between items-center bg-tertiary-500 hover:bg-tertiary-400 rounded-lg w-52 text-left px-5 shadow-md border-2 border-primary-50 h-12" -->
 		<div class="flex items-center gap-2">
 			<i class="fa-solid fa-magnifying-glass" />
 			<span>Search...</span>
 		</div>
 
-		<span>⌘K</span>
+		<span>{isOsMac() ? '⌘' : 'Ctrl'}+K</span>
 	</button>
 </div>
