@@ -1,9 +1,11 @@
 <script lang="ts">
 	import CategoryIcon from '$lib/components/category-icon/category-icon.svelte';
-	import type { Recipe } from '$lib/types';
+	import { searchFilters } from '$lib/stores/search-filters';
+	import type { Recipe, SearchFilter } from '$lib/types';
 	import { focusTrap, modalStore } from '@skeletonlabs/skeleton';
-	import _ from 'lodash';
-	import { groupRecipesByCategory } from '../../helpers/group-recipes-by-category';
+	import { keys } from 'lodash';
+	import { groupRecipesByCategory } from '../../../helpers/group-recipes-by-category';
+	import Filters from './filters.svelte';
 
 	export let recipes: Recipe[];
 
@@ -25,10 +27,15 @@
 
 	let elemDocSearch: HTMLElement;
 
-	function onSearch(): void {
-		filteredRecipes = recipes.filter((r) =>
-			_.values(r).toString().includes(searchTerm.toLowerCase())
-		);
+	function onSearch(searchFilters: SearchFilter): void {
+		const omitFilters: (keyof SearchFilter)[] = Object.keys(searchFilters)
+			.filter((key) => searchFilters[key as keyof SearchFilter])
+			.map((key) => key as keyof SearchFilter);
+
+		filteredRecipes = recipes.filter((recipe) => {
+			const filteredRecipe = omitFilters.reduce((acc, key) => acc + recipe[key], '');
+			return filteredRecipe.toLowerCase().includes(searchTerm.toLowerCase());
+		});
 	}
 
 	function onInputKeyDown(event: KeyboardEvent): void {
@@ -48,13 +55,19 @@
 			bind:value={searchTerm}
 			type="search"
 			placeholder="Search..."
-			on:input={onSearch}
+			on:input={() => onSearch($searchFilters)}
 			on:keydown={onInputKeyDown}
 		/>
 	</header>
 
 	<div class="modal-search-results {cResults}">
+		<Filters onClick={() => onSearch($searchFilters)} />
+
 		<nav class="list-nav text-lg">
+			{#if filteredRecipes.length === 0}
+				<p class="p-4">No results found.</p>
+			{/if}
+
 			{#each groupedRecipesByCategory as recipe}
 				{#if filteredRecipes
 					.map((r) => r.category)

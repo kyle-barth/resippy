@@ -11,6 +11,8 @@ export type RecipeData = Recipe & {
 	slug: string;
 };
 
+export type SearchFilter = { [key in keyof Omit<Recipe, 'slug' | 'src'>]: boolean };
+
 export interface GroupedRecipes {
 	category: string;
 	recipes: Recipe[];

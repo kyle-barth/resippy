@@ -15,7 +15,7 @@
 
 	<button
 		on:click={triggerSearchModal}
-		class="flex justify-between items-center w-52 h-12 btn variant-ringed-secondary"
+		class="flex justify-between items-center w-52 h-12 btn variant-ghost-secondary"
 	>
 		<div class="flex items-center gap-2">
 			<i class="fa-solid fa-magnifying-glass" />

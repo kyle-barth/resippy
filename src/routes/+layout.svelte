@@ -2,7 +2,7 @@
 	import { AppShell, Modal, modalStore, type ModalComponent } from '@skeletonlabs/skeleton';
 
 	import Header from '$lib/components/header/header.svelte';
-	import SearchModal from '$lib/components/modals/search-modal.svelte';
+	import SearchModal from '$lib/components/modals/search-modal/search-modal.svelte';
 
 	import '@skeletonlabs/skeleton/styles/all.css';
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
