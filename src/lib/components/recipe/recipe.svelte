@@ -1,15 +1,17 @@
 <script lang="ts">
-	import Checkbox from '$lib/components/checkbox/checkbox.svelte';
+	import { padding, spacing } from '$lib/helpers/page-spacing';
 	import type { Step } from '$lib/types';
 	import { combineIngredients } from '../../helpers/combine-ingredients';
+	import Description from './description.svelte';
 	import Header from './header.svelte';
+	import Ingredients from './ingredients.svelte';
+	import Instructions from './instructions.svelte';
+	import Subheader from './subheader.svelte';
 
 	export let title: string;
 	export let description: string | undefined = undefined;
 	export let src: string;
 	export let steps: Step[];
-
-	const spacing = 'sm:gap-4 gap-6';
 
 	let showIngredients = false;
 	const ingredients = combineIngredients(
@@ -37,80 +39,22 @@
 		<Header {title} />
 	</header>
 
-	<div class="p-10">
-		<div class="flex flex-col gap-8">
-			<div class="flex flex-col-reverse sm:flex-row gap-8 justify-between w-full">
-				<span class="flex gap-4 items-center justify-center">
-					{#if showIngredients}
-						<i class="fa-solid fa-list-check text-3xl" />
-					{:else}
-						<i class="fa-solid fa-list-ol text-3xl" />
-					{/if}
-					<h2>{showIngredients ? 'Ingredients' : 'Steps'}</h2>
-				</span>
-				<button class="btn variant-soft-secondary" on:click={toggle}
-					>Show {showIngredients ? 'Steps' : 'Ingredients'}</button
-				>
-			</div>
+	<div class="{spacing} {padding} flex flex-col">
+		<Subheader {showIngredients} {toggle} />
 
-			{#if showIngredients}
-				<ul class="flex flex-col {spacing}">
-					{#each ingredients as ingredient}
-						<li>
-							<Checkbox text={ingredient} />
-						</li>
-					{/each}
-				</ul>
+		{#if showIngredients}
+			<Ingredients {ingredients} />
+		{:else}
+			<Instructions {steps} />
+		{/if}
 
-				<hr />
-			{:else}
-				<ol class="flex flex-col gap-4">
-					{#each steps as step, i}
-						<li>
-							<article class="flex flex-col {spacing}">
-								<header class="m-auto">
-									<h3>{`${i + 1}. ${step.title}`}</h3>
-								</header>
-
-								{#if step.instructions}
-									<p>{step.instructions}</p>
-								{/if}
-
-								{#if step.ingredients}
-									<ul class="flex flex-col {spacing}">
-										{#each step.ingredients as ingredient}
-											<li>
-												<Checkbox text={ingredient} />
-											</li>
-										{/each}
-									</ul>
-								{/if}
-
-								<hr />
-							</article>
-						</li>
-					{/each}
-				</ol>
-			{/if}
-
-			<span class="w-full flex justify-between">
-				<p>Enjoy 😋</p>
-				<a href="/">More recipes <i class="fa-solid fa-arrow-right" /></a>
-			</span>
-		</div>
+		<span class="w-full flex justify-between">
+			<p>Enjoy 😋</p>
+			<a href="/">More recipes <i class="fa-solid fa-arrow-right" /></a>
+		</span>
 	</div>
 </section>
 
 {#if description}
-	<section class="flex sm:flex-row flex-col gap-5">
-		<header class="flex flex-col items-center gap-1 m-auto">
-			<i class="fa-solid fa-book" />
-			<h3>History</h3>
-		</header>
-		<span class="sm:w-2/3 gap-10 flex flex-col">
-			<p>
-				{description}
-			</p>
-		</span>
-	</section>
+	<Description {description} />
 {/if}
