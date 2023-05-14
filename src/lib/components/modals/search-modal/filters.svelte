@@ -2,13 +2,13 @@
 	import { searchFilters } from '$lib/stores/search-filters';
 	import type { SearchFilter } from '$lib/types';
 	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
-	import _ from 'lodash';
+	import { keys } from 'lodash';
 
 	export let onClick: (searchFilters: SearchFilter) => void;
 
 	const icon = 'fa-solid w-3';
 
-	const keys = _.keys($searchFilters) as (keyof SearchFilter)[];
+	const sfKeys = keys($searchFilters) as (keyof SearchFilter)[];
 
 	function handleClick(key: keyof SearchFilter) {
 		searchFilters.update((filters) => {
@@ -32,7 +32,7 @@
 			<nav>
 				<ul class="flex sm:flex-row flex-col gap-2 items-center">
 					<span class="flex gap-2 flex-wrap">
-						{#each keys as key}
+						{#each sfKeys as key}
 							<span
 								class="chip {$searchFilters[key]
 									? 'variant-ghost-tertiary'

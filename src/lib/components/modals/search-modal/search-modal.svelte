@@ -3,7 +3,6 @@
 	import { searchFilters } from '$lib/stores/search-filters';
 	import type { Recipe, SearchFilter } from '$lib/types';
 	import { focusTrap, modalStore } from '@skeletonlabs/skeleton';
-	import { keys } from 'lodash';
 	import { groupRecipesByCategory } from '../../../helpers/group-recipes-by-category';
 	import Filters from './filters.svelte';
 

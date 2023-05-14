@@ -6,7 +6,6 @@
 
 	import '@skeletonlabs/skeleton/styles/all.css';
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
-
 	// TODO change theme
 	// import '@skeletonlabs/skeleton/themes/theme-gold-nouveau.css';
 	// import '@skeletonlabs/skeleton/themes/theme-hamlindigo.css';
@@ -22,9 +21,19 @@
 	import DisableAutoScroll from '$lib/components/disable-auto-scroll/disable-auto-scroll.svelte';
 	import PageLayout from '$lib/components/page-layout/page-layout.svelte';
 	import { triggerSearchModal } from '$lib/helpers/trigger-search-modal';
+	import { categories } from '$lib/stores/categories';
+	import { uniq } from 'lodash';
 
 	export let data;
 	let recipes = data.recipes;
+
+	$categories = uniq(recipes.map((recipe) => recipe.category)).reduce(
+		(acc, category) => ({
+			...acc,
+			[category]: true
+		}),
+		{}
+	);
 
 	const modalComponentRegistry: Record<string, ModalComponent> = {
 		modalSearch: { ref: SearchModal, props: { recipes } }
