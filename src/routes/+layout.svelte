@@ -22,12 +22,12 @@
 	import PageLayout from '$lib/components/page-layout/page-layout.svelte';
 	import { triggerSearchModal } from '$lib/helpers/trigger-search-modal';
 	import { categories } from '$lib/stores/categories';
-	import { uniq } from 'lodash';
 
 	export let data;
 	let recipes = data.recipes;
 
-	$categories = uniq(recipes.map((recipe) => recipe.category)).reduce(
+	const _categories = Array.from(new Set(recipes.map((recipe) => recipe.category)));
+	$categories = _categories.reduce(
 		(acc, category) => ({
 			...acc,
 			[category]: true

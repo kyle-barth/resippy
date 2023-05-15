@@ -1,7 +1,8 @@
 <script lang="ts">
 	import RecipeCard from '$lib/components/recipe-card/recipe-card.svelte';
+	import { omit } from '$lib/helpers/omit.js';
 	import { spacing } from '$lib/helpers/page-spacing.js';
-	import { omit } from 'lodash';
+	import _ from 'lodash';
 
 	function capitalize(str: string) {
 		return str.charAt(0).toUpperCase() + str.slice(1);

@@ -38,8 +38,5 @@
 		"vite": "^4.3.0",
 		"vitest": "^0.25.3"
 	},
-	"type": "module",
-	"dependencies": {
-		"lodash": "^4.17.21"
-	}
+	"type": "module"
 }

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import CategoryIcon from '$lib/components/category-icon/category-icon.svelte';
 	import RecipeCard from '$lib/components/recipe-card/recipe-card.svelte';
+	import { omit } from '$lib/helpers/omit.js';
 	import { formSpacing } from '$lib/helpers/page-spacing.js';
 	import { categories } from '$lib/stores/categories.js';
-	import { keys, omit } from 'lodash';
 
 	export let data;
 	const recipes = data.recipes.map((recipe) => omit(recipe, 'description'));
@@ -13,7 +13,7 @@
 	<h2 class="">Browse by category:</h2>
 	<nav>
 		<ul class="{formSpacing} flex flex-wrap justify-center items-center">
-			{#each keys($categories) as category}
+			{#each Object.keys($categories) as category}
 				<li>
 					<a
 						class="chip unstyled flex flex-col justify-center items-center variant-ghost-tertiary"
