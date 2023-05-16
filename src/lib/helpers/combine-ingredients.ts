@@ -1,13 +1,13 @@
 export function combineIngredients(ingredients: string[]) {
-	const combinedIngredients = {} as any;
+	const combinedIngredients: { [name: string]: { amount: number; unit?: string } } = {};
 
 	for (const ingredient of ingredients) {
-		const match = ingredient.match(/^([\d.]+)(\s*\S+)?\s+(.+)$/);
+		const match = ingredient.match(/^((\d+\s)?\d+\/\d+|\d+(\.\d+)?)(\s*\S+)?\s+(.+)$/);
 		if (!match) {
 			throw new Error(`Invalid ingredient: ${ingredient}`);
 		}
-		const [, amountStr, unit, name] = match;
-		const amount = parseFloat(amountStr);
+		const [, amountStr, , , unit, name] = match;
+		const amount = eval(amountStr);
 
 		const existingIngredient = combinedIngredients[name];
 		if (existingIngredient) {
@@ -21,7 +21,6 @@ export function combineIngredients(ingredients: string[]) {
 	}
 
 	return Object.entries(combinedIngredients).map(
-		// @ts-ignore
 		([name, { amount, unit }]) => `${amount}${unit || ''} ${name}`
 	);
 }
