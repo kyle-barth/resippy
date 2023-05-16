@@ -1,4 +1,4 @@
-export function combineIngredients(ingredients: string[]) {
+export function combineIngredients(ingredients: string[]): string[] {
 	const combinedIngredients: { [name: string]: { amount: number; unit?: string } } = {};
 
 	for (const ingredient of ingredients) {
