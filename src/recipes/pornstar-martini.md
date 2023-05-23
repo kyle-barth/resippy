@@ -1,6 +1,6 @@
 ---
 title: Pornstar Martini
-summary: A classic cocktail made with gin, rosso vermouth, campari, bitters, and a citrus peel.
+summary: A London born fruity classic and the most popular cocktail in the UK.
 description: The Pornstar Martini is a relatively new cocktail that has gained immense popularity in recent years. Its origins can be traced back to the early 2000s, when bartender Douglas Ankrah created the drink at The Townhouse bar in London. The cocktail's unique blend of sweet and sour flavors, along with its distinct passionfruit aroma, has made it a hit among those looking for a sophisticated yet fun drink. The cocktail typically consists of vanilla vodka, passionfruit puree, lime juice, and a dash of sugar syrup, with a shot of Prosecco served on the side. Its playful name and luxurious presentation, often served with a side of passionfruit pulp and a shot of Prosecco, have made the Pornstar Martini a popular choice for those looking to add a touch of glamour to their night out.
 src: '/assets/pornstar-martini.png'
 category: 'Cocktail'

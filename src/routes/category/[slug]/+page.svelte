@@ -30,7 +30,7 @@
 		<span class="flex gap-2 items-center justify-center">
 			<a href="/" class="unstyled text-xl text-white underline font-bold">Home</a>
 			<i class="fa-solid fa-angle-right" />
-			<h2>{title}:</h2>
+			<h2 class="unstyled text-3xl">{title}:</h2>
 		</span>
 		<SearchInput category={title.toLowerCase()} {search} />
 	</header>

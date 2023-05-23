@@ -5,7 +5,7 @@
 	let searchTerm: string = '';
 </script>
 
-<form class="w-[80%]">
+<form class="sm:w-72 w-[80%]">
 	<label for="default-search" class="mb-2 text-sm font-medium sr-only dark:text-white">Search</label
 	>
 	<div class="relative">
