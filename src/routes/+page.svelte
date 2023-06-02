@@ -1,6 +1,6 @@
 <script lang="ts">
+	import Carousel from '$lib/components/carousel/carousel.svelte';
 	import CategoryIcon from '$lib/components/category-icon/category-icon.svelte';
-	import RecipeCard from '$lib/components/recipe-card/recipe-card.svelte';
 	import { omit } from '$lib/helpers/omit.js';
 	import { formSpacing } from '$lib/helpers/page-spacing.js';
 	import { categories } from '$lib/stores/categories.js';
@@ -28,12 +28,4 @@
 	</nav>
 </section>
 
-<section>
-	<ul class="grid grid-cols-1 gap-4">
-		<li class="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-			{#each recipes as recipe}
-				<RecipeCard {...recipe} />
-			{/each}
-		</li>
-	</ul>
-</section>
+<Carousel {recipes} />
