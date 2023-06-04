@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Carousel from '$lib/components/carousel/carousel.svelte';
 	import CategoryIcon from '$lib/components/category-icon/category-icon.svelte';
+	import Recipes from '$lib/components/recipes/recipes.svelte';
 	import { omit } from '$lib/helpers/omit.js';
 	import { formSpacing } from '$lib/helpers/page-spacing.js';
 	import { categories } from '$lib/stores/categories.js';
@@ -8,6 +8,12 @@
 	export let data;
 	const recipes = data.recipes.map((recipe) => omit(recipe, 'description'));
 </script>
+
+<!-- <svelte:head> TODO - add meta tags
+	<title>Home</title>
+	<description>A collection of recipes for food, drinks, sauces, and seasonings.</description>
+	<keywords>recipes, food, drinks, sauces, seasonings</keywords>
+</svelte:head> -->
 
 <section class="{formSpacing} flex flex-col justify-center items-center">
 	<h2 class="">Browse by category:</h2>
@@ -28,4 +34,6 @@
 	</nav>
 </section>
 
-<Carousel {recipes} />
+<hr />
+
+<Recipes {recipes} />

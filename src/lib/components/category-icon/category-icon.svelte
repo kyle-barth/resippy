@@ -1,15 +1,16 @@
 <script lang="ts">
 	export let category: string;
+	export let fontSize: string | undefined = undefined;
 </script>
 
 {#if category.toLowerCase() === 'cocktail'}
-	<i class="fa-solid fa-martini-glass-citrus" />
+	<i class="{fontSize} fa-solid fa-martini-glass-citrus" />
 {:else if category.toLowerCase() === 'food'}
-	<i class="fa-solid fa-utensils" />
+	<i class="{fontSize} fa-solid fa-utensils" />
 {:else if category.toLowerCase() === 'seasoning'}
-	<i class="fa-solid fa-jar" />
+	<i class="{fontSize} fa-solid fa-jar" />
 {:else if category.toLowerCase() === 'sauce'}
-	<i class="fa-solid fa-droplet" />
+	<i class="{fontSize} fa-solid fa-droplet" />
 {:else}
-	<i class="fa-solid fa-kitchen-set" />
+	<i class="{fontSize} fa-solid fa-kitchen-set" />
 {/if}
