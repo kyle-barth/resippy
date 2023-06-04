@@ -6,6 +6,7 @@
 
 	import '@skeletonlabs/skeleton/styles/all.css';
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
+
 	// TODO change theme
 	// import '@skeletonlabs/skeleton/themes/theme-gold-nouveau.css';
 	// import '@skeletonlabs/skeleton/themes/theme-hamlindigo.css';
@@ -19,6 +20,7 @@
 	import '../app.postcss';
 
 	import DisableAutoScroll from '$lib/components/disable-auto-scroll/disable-auto-scroll.svelte';
+	import Footer from '$lib/components/footer/footer.svelte';
 	import PageLayout from '$lib/components/page-layout/page-layout.svelte';
 	import { triggerSearchModal } from '$lib/helpers/trigger-search-modal';
 	import { categories } from '$lib/stores/categories';
@@ -58,4 +60,6 @@
 
 		<slot />
 	</PageLayout>
+
+	<Footer />
 </AppShell>

@@ -1,7 +1,7 @@
-import type { GroupedRecipes, Recipe } from '$lib/types';
+import type { GroupedRecipe, Recipe } from '$lib/types';
 
-export function groupRecipesByCategory(recipes: Recipe[]): GroupedRecipes[] {
-	const groupedRecipes: GroupedRecipes[] = [];
+export function groupRecipesByCategory(recipes: Recipe[]): GroupedRecipe[] {
+	const groupedRecipes: GroupedRecipe[] = [];
 
 	recipes.forEach((recipe) => {
 		const existingCategory = groupedRecipes.find(
