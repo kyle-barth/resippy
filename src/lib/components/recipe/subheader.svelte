@@ -14,7 +14,7 @@
 		{/if}
 		<h2>{showIngredients ? 'Ingredients' : 'Steps'}</h2>
 	</span>
-	<button class="btn variant-soft-secondary" on:click={toggle}
+	<button class="btn variant-soft-secondary" style="color: white !important;" on:click={toggle}
 		>Show {showIngredients ? 'Steps' : 'Ingredients'}</button
 	>
 </div>
