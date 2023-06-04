@@ -15,7 +15,7 @@
 		<h3 class="sm:w-64 flex items-center justify-center">{groupedRecipe.category}</h3>
 	</div>
 
-	<div class="max-w-7xl overflow-auto flex -mt-4">
+	<div class="max-w-7xl overflow-auto flex -mt-4 -mb-2">
 		<ul class="{spacing} flex flex-row flex-nowrap p-4">
 			{#each groupedRecipe.recipes.slice(0, 3) as recipe}
 				<li class={li}>
