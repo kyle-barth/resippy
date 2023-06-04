@@ -4,9 +4,13 @@
 </script>
 
 <div class="flex justify-between items-center">
-	<a class="unstyled hover:cursor-pointer flex flex-col items-center" href="/">
-		<span>
+	<a
+		class="unstyled hover:cursor-pointer flex flex-col items-center border-2 rounded px-2 py-1 border-dashed"
+		href="/"
+	>
+		<span class="flex items-center justify-center gap-2 -mb-2">
 			<i class="fa-solid fa-utensils xs:text-2xl text-xl" />
+			<img class="w-10 h-10" src="/favicon.png" alt="Resippy" />
 			<i class="fa-solid fa-martini-glass-citrus xs:text-2xl text-xl" />
 		</span>
 

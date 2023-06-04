@@ -9,11 +9,14 @@
 	const recipes = data.recipes.map((recipe) => omit(recipe, 'description'));
 </script>
 
-<!-- <svelte:head> TODO - add meta tags
-	<title>Home</title>
-	<description>A collection of recipes for food, drinks, sauces, and seasonings.</description>
-	<keywords>recipes, food, drinks, sauces, seasonings</keywords>
-</svelte:head> -->
+<svelte:head>
+	<title>Resippy</title>
+	<meta
+		name="description"
+		content="A collection of recipes for food, drinks, sauces, and seasonings."
+	/>
+	<meta name="keywords" content="recipes, food, drinks, sauces, seasonings" />
+</svelte:head>
 
 <section class="{formSpacing} flex flex-col justify-center items-center">
 	<h2 class="">Browse by category:</h2>
