@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '$lib/components/breadcrumbs/breadcrumbs.svelte';
 	import RecipeCard from '$lib/components/recipe-card/recipe-card.svelte';
 	import SearchInput from '$lib/components/search-input/search-input.svelte';
 	import { omit } from '$lib/helpers/omit.js';
@@ -27,11 +28,7 @@
 
 <section class="{spacing} flex flex-col justify-center items-center">
 	<header class="{formSpacing} flex flex-col justify-center items-center w-full">
-		<span class="flex gap-2 items-center justify-center">
-			<a href="/" class="unstyled text-xl text-white underline font-bold">Home</a>
-			<i class="fa-solid fa-angle-right" />
-			<h2 class="unstyled text-3xl">{title}:</h2>
-		</span>
+		<Breadcrumbs {title} />
 		<SearchInput category={title.toLowerCase()} {search} />
 	</header>
 

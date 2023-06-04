@@ -2,6 +2,7 @@
 	import { padding, spacing } from '$lib/helpers/page-spacing';
 	import type { Step } from '$lib/types';
 	import { combineIngredients } from '../../helpers/combine-ingredients';
+	import Breadcrumbs from '../breadcrumbs/breadcrumbs.svelte';
 	import Description from './description.svelte';
 	import Header from './header.svelte';
 	import Ingredients from './ingredients.svelte';
@@ -27,6 +28,8 @@
 <svelte:head>
 	<title>{title}</title>
 </svelte:head>
+
+<Breadcrumbs {title} />
 
 <section class="card overflow-hidden">
 	<header class="relative flex items-center justify-center">
