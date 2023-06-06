@@ -1,5 +1,6 @@
 <script lang="ts">
 	import CategoryIcon from '$lib/components/category-icon/category-icon.svelte';
+	import Intro from '$lib/components/intro/intro.svelte';
 	import Recipes from '$lib/components/recipes/recipes.svelte';
 	import { omit } from '$lib/helpers/omit.js';
 	import { formSpacing } from '$lib/helpers/page-spacing.js';
@@ -18,10 +19,12 @@
 	<meta name="keywords" content="recipes, food, drinks, sauces, seasonings" />
 </svelte:head>
 
+<Intro />
+
 <section class="{formSpacing} flex flex-col justify-center items-center">
 	<h2 class="">Browse by category:</h2>
-	<nav>
-		<ul class="{formSpacing} flex flex-wrap justify-center items-center">
+	<nav class="w-full sm:w-auto">
+		<ul class="{formSpacing} flex flex-wrap justify-between items-center">
 			{#each Object.keys($categories) as category}
 				<li>
 					<a

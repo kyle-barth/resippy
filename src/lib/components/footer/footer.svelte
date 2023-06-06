@@ -7,7 +7,7 @@
 
 <footer class="{padding} {formSpacing} flex items-center flex-col sm:flex-row sm:justify-between">
 	<div class="{formSpacing} flex flex-col items-center justify-center">
-		<Icon scale="75" />
+		<Icon scale="50" />
 		<p>Thanks for visiting!</p>
 	</div>
 
