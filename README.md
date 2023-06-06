@@ -4,6 +4,7 @@ This repo contains the android, ios and web apps. The app is rendered statically
 # Made with 🚀
 
 - [SvelteKit](https://kit.svelte.dev/)
+- [mdsvex](https://mdsvex.com/)
 - [Skeleton](https://www.skeleton.dev/)
 - [Capacitor](https://capacitorjs.com/)
 - [Font Awesome Icons](https://fontawesome.com/)
