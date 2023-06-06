@@ -3,11 +3,11 @@
 	export let scale: IconSizes = '100';
 
 	const sizes: { [key in IconSizes]: string } = {
-		50: 'scale-50 -my-5',
-		75: 'scale-75 -my-3',
+		50: 'scale-50 -my-5 -mx-8',
+		75: 'scale-75 -my-2 -mx-4',
 		100: 'scale-100',
-		125: 'scale-125 my-2',
-		150: 'scale-150 my-4'
+		125: 'scale-125 my-3 mx-4',
+		150: 'scale-150 my-5 mx-8'
 	};
 </script>
 

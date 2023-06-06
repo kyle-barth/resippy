@@ -6,7 +6,6 @@
 
 	import '@skeletonlabs/skeleton/styles/all.css';
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
-
 	// TODO change theme
 	// import '@skeletonlabs/skeleton/themes/theme-gold-nouveau.css';
 	// import '@skeletonlabs/skeleton/themes/theme-hamlindigo.css';
@@ -55,9 +54,9 @@
 
 <AppShell regionPage="overflow-y-scroll" slotFooter="bg-black p-4">
 	<DisableAutoScroll />
-	<PageLayout>
-		<Header />
+	<Header />
 
+	<PageLayout>
 		<slot />
 	</PageLayout>
 
