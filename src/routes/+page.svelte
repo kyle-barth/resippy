@@ -28,7 +28,7 @@
 			{#each Object.keys($categories) as category}
 				<li>
 					<a
-						class="chip h-12 unstyled flex flex-col justify-center items-center variant-ghost-tertiary"
+						class="chip h-12 unstyled flex flex-col justify-center items-center variant-ghost-tertiary text-white"
 						href="/category/{category.toLowerCase()}"
 					>
 						<CategoryIcon {category} />
