@@ -1,5 +1,5 @@
 ---
-title: Bay Seasoning Buttermilk Fried Chicken
+title: Buttermilk Bay Fried Chicken
 summary: Crispy on the outside. Juicy on the inside.
 src: '/assets/fried-chicken.jpeg'
 category: 'Food'
