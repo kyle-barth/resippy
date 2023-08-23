@@ -1,3 +1,21 @@
+function formatAmount(amount: number) {
+	const roundedAmount = Math.round(amount * 100) / 100; // Round to 2 decimal places
+
+	if (Number.isInteger(roundedAmount)) {
+		return roundedAmount.toString(); // Whole number, no fraction formatting needed
+	}
+
+	// Check if roundedAmount is a fraction with a denominator of a power of 10
+	const fractionDenominators = [2, 4, 5, 10, 20, 25, 50];
+	for (const denominator of fractionDenominators) {
+		if (Math.abs(roundedAmount * denominator) % 1 === 0) {
+			return `${Math.round(roundedAmount * denominator)}/${denominator}`;
+		}
+	}
+
+	return roundedAmount.toFixed(2); // Default to decimal format
+}
+
 export function combineIngredients(ingredients: string[]): string[] {
 	const combinedIngredients: { [name: string]: { amount: number; unit?: string } } = {};
 
@@ -21,6 +39,6 @@ export function combineIngredients(ingredients: string[]): string[] {
 	}
 
 	return Object.entries(combinedIngredients).map(
-		([name, { amount, unit }]) => `${amount}${unit || ''} ${name}`
+		([name, { amount, unit }]) => `${formatAmount(amount)}${unit || ''} ${name}`
 	);
 }

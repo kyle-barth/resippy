@@ -12,8 +12,8 @@ category: 'Cocktail'
 	const steps = [
 		{
 			title: 'Combine',
-			instructions: 'Combine the following ingredients into a shaker.',
-			ingredients: ['45ml Vodka', '30ml Coffee Liqueur', '30ml Fresh Espresso', '10ml Sugar Syrup']
+			instructions: 'Combine the following ingredients into a shaker, Ron Zacapa Rum, Vanilla Vodka or Salted Caramel Vodka if you have it on hand is a must try!',
+			ingredients: ['1.5oz Vodka', '3/4oz Mr Black', '1oz Fresh Espresso', '1/4oz Rich Simple Syrup', '1 Squeeze of Citrus Oil from 1 inch Orange Peel']
 		},
 		{
 			title: 'Shake & Strain',

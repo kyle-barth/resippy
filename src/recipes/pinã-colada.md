@@ -13,15 +13,15 @@ category: 'Cocktail'
 		{
 			title: 'Blend',
 			instructions: 'In a blender, combine the following ingredients:',
-			ingredients: ['30ml Coco Lopez Cream of Coconut', '60ml 100% Pineapple Juice', '50ml Rum (Appleton Estate or Mount Gay are solid choices)', '120g Crushed Ice']
+			ingredients: ['1.5oz Cream of Coconut (Coco Lopez)', '1oz Coconut Milk', '2oz Fresh Pineapple Juice', '2oz White Rum', '1 Handful Ice']
 		},
 		{
 			title: 'Blend & Serve',
-			instructions: 'Blend until smooth and creamy. Pour into a hurricane glass and serve chilled.'
+			instructions: 'Blend until smooth and frothy. Pour into a hurricane glass and serve chilled.'
 		},
 		{
 			title: 'Garnish',
-			instructions: 'Garnish with a cherry and pineapple stick per beverage.'
+			instructions: 'Garnish with Spiked Maraschino Cherry Pineapple Fronds.'
 		}
 	];
 </script>
