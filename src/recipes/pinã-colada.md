@@ -13,7 +13,7 @@ category: 'Cocktail'
 		{
 			title: 'Blend',
 			instructions: 'In a blender, combine the following ingredients:',
-			ingredients: ['1.5oz Cream of Coconut (Coco Lopez)', '1oz Coconut Milk', '2oz Fresh Pineapple Juice', '2oz White Rum', '1 Handful Ice']
+			ingredients: ['1.5oz Cream of Coconut (Coco Lopez)', '1oz Coconut Milk', '4oz Fresh Pineapple Juice', '2oz White Rum', '1 Handful Ice']
 		},
 		{
 			title: 'Blend & Serve',
