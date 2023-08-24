@@ -11,13 +11,18 @@ category: 'Cocktail'
 
 	const steps = [
 		{
-			title: 'Stir Together', 
-			ingredients: ['50ml Bourbon', '15ml Maple Syrup', '1 Dash Bitters']
+			title: 'Stir Together in a mixing glass', 
+			ingredients: ['2oz Bourbon', '1/3oz Maple Syrup', '2 Dashes Angostura Bitters', '1/4 Orange Wheel']
+		},
+		{
+			title: 'Pour', 
+			instructions: 'Pour mix into tumbler glass with a large clear ice cube',
+			ingredients: ['1 Large Clear Ice Cube']
 		},
 		{
 			title: 'Garnish', 
-			instructions: 'Express citrus oil over drink',
-			ingredients: ['2inch Orange Peel']
+			instructions: 'Express citrus oil over drink, stab orange peel and cheery onto cocktail skewer.',
+			ingredients: ['2inch Orange Peel', '1 Maraschino Cherry']
 		}
 	]
 </script>
