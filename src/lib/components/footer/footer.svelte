@@ -11,7 +11,12 @@
 		<p>Thanks for visiting!</p>
 	</div>
 
-	<p>
-		Made by <a href="https://kyle-barth.dev" rel="noreferrer" target="_blank">kyle-barth.dev</a> 🚀
-	</p>
+	<span class="{formSpacing} flex flex-col items-end">
+		<p>
+			Made by <a href="https://www.linkedin.com/in/kyle-barth/" rel="noreferrer" target="_blank"
+				>LinkedIn/kyle-barth</a
+			>
+		</p>
+		<span class="text-2xl">🚀</span>
+	</span>
 </footer>
