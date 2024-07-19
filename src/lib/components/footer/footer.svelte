@@ -13,8 +13,8 @@
 
 	<span class="{formSpacing} flex flex-col items-end">
 		<p>
-			Made by <a href="https://www.linkedin.com/in/kyle-barth/" rel="noreferrer" target="_blank"
-				>LinkedIn/kyle-barth</a
+			Made by <a href="https://www.kyle-barth.dev" rel="noreferrer" target="_blank"
+				>kyle-barth.dev</a
 			>
 		</p>
 		<span class="text-2xl">🚀</span>

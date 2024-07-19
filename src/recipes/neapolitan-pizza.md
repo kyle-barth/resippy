@@ -11,29 +11,27 @@ category: 'Food'
 
 	const steps = [
 		{
-			title: 'Create Poolish', 
-			instructions: 'The night before you want pizza, combine the following ingredients in a tupperware container and fridge overnight.',
-			ingredients: ['100g Water', '100g 00 Flour', '7g Yeast', '5g Honey']
+			title: 'Autolyse', 
+			instructions: 'Two - three nights before pizza time, loosely mix together until flour fully hydrated and leave to autolyse for 2 hours. Feel free to skip autolyse / slap + folds for stand mixer use.',
+			ingredients: ['275g 00 Flour', '180g Water']
 		},
 		{
-			title: 'Create pizza dough', 
-			instructions: 'Combine Poolish with the following ingredients and kneed until dough no longer sticky.',
-			ingredients: ['240g 00 Flour', '145g Water', '10g Salt']
+			title: 'Add yeast', 
+			instructions: 'Add yeast and work the dough until fully incorporated.',
+			ingredients: ['1g Yeast']
 		},
 		{
-			title: 'Rest - Part 1', 
-			instructions: 'Take dough onto counter top, and shape into a rough ball. Cover with a light layer of olive oil and leave uncovered for 15min.',
-			ingredients: ['1tbsp Olive Oil']
+			title: 'Add salt', 
+			instructions: 'Add salt and work the dough until fully incorporated.',
+			ingredients: ['6g Salt']
 		},
 		{
-			title: 'Rest - Part 2', 
-			instructions: 'Work dough into tight ball. Cover with a light layer of olive oil and leave covered for a minimum of 1 hour.',
-			ingredients: ['1tbsp Olive Oil']
+			title: 'Slap and folds', 
+			instructions: 'Once fully incorporated slap and fold dough every 30 mins 4 times (2 hours slap + folds total).',
 		},
 		{
-			title: 'Rest - Part 3', 
-			instructions: 'Divide the dough into 2 balls of 230g each (or 250g if using a larger pizza oven). Lightly coat the dough balls in olive oil and place them in a covered bread proofing box. Let the dough rest for 1-2 hours, depending on the room temperature, until the gluten has relaxed and the dough can be stretched easily without springing back.',
-			ingredients: ['3tbsp Olive Oil']
+			title: 'Portion dough and wait...', 
+			instructions: 'Slap air out of the dough and portion dough into 230g balls. Transfer shaped dough balls into covered fridge container and ferment for two to three days, if dough over ferments reshape the dough 24 hours before use.',
 		},
 	]
 </script>
